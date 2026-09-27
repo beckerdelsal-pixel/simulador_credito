@@ -8,4 +8,11 @@ function calcular(){
 
     let capacidadPago = calcularCapacidadDePago(disponible).toFixed(2);
     mostrarEnSpan("spnCapacidadPago", capacidadPago);
+
+    let monto = recuperarEntero("txtMonto");
+    let plazo = recuperarEntero("txtPlazo");
+    let tasa = recuperarEntero("txtTasaInteres");
+    let interesSimple=calcularInteresSimple(monto, tasa, plazo);
+    mostrarEnSpan("spnInteresPagar",interesSimple);
+
 }

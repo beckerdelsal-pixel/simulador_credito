@@ -3,11 +3,11 @@
 function calcular(){
     let ingresos = recuperarFloat("txtIngresos");
     let egresos = recuperarFloat("txtEgresos");
-    let disponible = calcularDisponible(ingresos, egresos).toFixed(2);
-    mostrarEnSpan("spnDisponible", disponible);
+    let disponible = calcularDisponible(ingresos, egresos);
+    mostrarEnSpan("spnDisponible", disponible.toFixed(2));
 
-    let capacidadPago = calcularCapacidadDePago(disponible).toFixed(2);
-    mostrarEnSpan("spnCapacidadPago", capacidadPago);
+    let capacidadPago = calcularCapacidadDePago(disponible);
+    mostrarEnSpan("spnCapacidadPago", capacidadPago.toFixed(2));
 
     let monto = recuperarEntero("txtMonto");
     let plazo = recuperarEntero("txtPlazo");
@@ -19,6 +19,13 @@ function calcular(){
     mostrarEnSpan("spnTotalPrestamo",total);
 
     let cuotaMensual = calcularCuotaMensual(total, plazo);
-    mostrarEnSpan("spnCuotaMensual",cuotaMensual);
+    mostrarEnSpan("spnCuotaMensual",cuotaMensual.toFixed(2));
+
+    let resultado = aprobarCredito(capacidadPago,cuotaMensual);
+    if(resultado == true){
+        mostrarEnSpan("spnEstadoCredito", "CREDITO APROBADO!!");
+    }else{
+        mostrarEnSpan("spnEstadoCredito", "CREDITO RECHAZADO!!");
+    }
 
 }

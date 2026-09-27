@@ -5,4 +5,7 @@ function calcular(){
     let egresos = recuperarFloat("txtEgresos");
     let disponible = calcularDisponible(ingresos, egresos).toFixed(2);
     mostrarEnSpan("spnDisponible", disponible);
+
+    let capacidadPago = calcularCapacidadDePago(disponible).toFixed(2);
+    mostrarEnSpan("spnCapacidadPago", capacidadPago);
 }

@@ -1,0 +1,17 @@
+prompt inicial:
+Actua como un diseñador grafico experto, y realiza modificaciones en la interfaz visual de los siguientes archivos html y css. Sin embargo debes tener en cuenta lo siguiente:
+No debes modificar, ni cambiar ni eliminar los ids que estan colocados
+No debes modificar nada que interfiera con mi codigo javascript
+No debes importar mas librerias, solo hay que trabajar con html y css
+Importante: la entidad financiera es Banco Guayaquil, asi que al momento de modificar la pagina debes tener presente colocar los colores caracteristicos de dicha entidad, asi como tambien colocar su logo
+Nota: Ademas de lo antes mencionado, debes hacer que tenga un diseño responsive para que sea visible correctamente en todos los dispositivos. 
+Por ultimo, escoge una fuente y tamaño de letra que denote un estilo formal y empresarial, debe ir acorde a la entidad indicada
+
+prompt modificación:
+Debes cambiarle los colores que usaste, ya que, los colores caracteristicos de banco guayaquil son:
+Magenta
+Blanco
+Negro
+Azul (para sus tarjetas de credito)
+ademas, te comparto la imagen del logo para que puedas agregarlo a la pagina en el lugar donde corresponda mientras se vea con un diseño elegante y empresarial
+aqui esta el logo: 

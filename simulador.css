@@ -1,70 +1,356 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
+/* =========================================================
+   SIMULADOR DE CRÉDITO - BANCO GUAYAQUIL
+   Diseño visual responsive
+   Colores: Magenta / Blanco / Negro / Azul
+   No modifica IDs ni dependencias JavaScript
+   ========================================================= */
+
+:root {
+    --magenta: #d5006d;
+    --magenta-dark: #a90055;
+    --magenta-soft: #fce6f1;
+    --blue: #0757a5;
+    --blue-dark: #003f7d;
+    --black: #171717;
+    --text-soft: #626262;
+    --white: #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #fafafa;
+    --border: #dedede;
+    --bg: #f4f4f6;
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+    --radius: 18px;
 }
 
-.container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+* {
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--black);
+    background:
+        radial-gradient(circle at 8% 0%, rgba(213, 0, 109, 0.09), transparent 30%),
+        radial-gradient(circle at 100% 100%, rgba(7, 87, 165, 0.08), transparent 28%),
+        var(--bg);
+}
+
+/* Tarjeta principal */
+.container {
+    position: relative;
+    width: min(100%, 540px);
+    margin: 0 auto;
+    padding: 30px 38px 34px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid #e2e2e2;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Franja institucional */
+.container::before {
+    content: "";
+    display: block;
+    height: 6px;
+    margin: -30px -38px 25px;
+    background: linear-gradient(
+        90deg,
+        var(--magenta) 0%,
+        var(--magenta) 68%,
+        var(--blue) 68%,
+        var(--blue) 100%
+    );
+}
+
+/* Pie de marca */
+.container::after {
+    content: "BANCO GUAYAQUIL";
+    display: block;
+    margin-top: 28px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Logo entregado por el usuario */
+.brand-logo {
+    width: 190px;
+    margin: 0 auto 22px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--magenta);
+    box-shadow: 0 8px 20px rgba(213, 0, 109, 0.16);
+}
+
+.brand-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Título */
+h1 {
+    margin: 0 0 8px;
+    color: var(--black);
+    font-size: clamp(25px, 5vw, 31px);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+}
+
+/* Línea magenta bajo el título */
+h1::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 4px;
+    margin: 11px auto 0;
+    border-radius: 4px;
+    background: var(--magenta);
+}
+
+/* Secciones */
+h2 {
+    margin: 28px 0 14px;
+    padding: 11px 13px;
+    border-left: 4px solid var(--magenta);
+    border-radius: 0 8px 8px 0;
+    background: var(--magenta-soft);
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin: 15px 0 6px;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Campos */
+input {
+    width: 100%;
+    min-height: 46px;
+    margin: 0;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: var(--surface-soft);
+    color: var(--black);
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input:hover {
+    border-color: #bcbcbc;
+}
+
+input:focus {
+    border-color: var(--magenta);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(213, 0, 109, 0.12);
+}
+
+/* Resultados */
 p {
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 10px 0 0;
+    padding: 11px 13px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background: #fcfcfc;
+    color: var(--text-soft);
+    font-size: 13px;
 }
 
 span {
-    font-weight: bold;
-    color: #2c3e50;
+    color: var(--black);
+    font-weight: 800;
+    text-align: right;
 }
 
+/* Estado del crédito */
+#spnEstadoCredito {
+    color: var(--blue);
+}
+
+/* Botones */
 .buttons {
-    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+    flex: 1;
+    width: auto;
+    min-height: 46px;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--magenta);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 6px 15px rgba(213, 0, 109, 0.20);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background: var(--magenta-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 19px rgba(213, 0, 109, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(7, 87, 165, 0.35);
+    outline-offset: 2px;
+}
+
+/* Botón reiniciar */
+#btnReiniciar {
+    background: var(--black);
+    color: var(--white);
+    box-shadow: none;
+}
+
+#btnReiniciar:hover {
+    background: #333333;
+}
+
+/* Tablets */
+@media (max-width: 700px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .container {
+        padding: 28px 28px 32px;
+    }
+
+    .container::before {
+        margin: -28px -28px 23px;
+    }
+
+    .brand-logo {
+        width: 180px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    body {
+        padding: 14px 10px;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 24px 18px 27px;
+        border-radius: 14px;
+    }
+
+    .container::before {
+        margin: -24px -18px 21px;
+    }
+
+    .brand-logo {
+        width: min(180px, 65vw);
+        margin-bottom: 19px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        margin-top: 23px;
+        font-size: 15px;
+    }
+
+    p {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    span {
+        width: 100%;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .container::after {
+        margin-top: 24px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 340px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 21px 14px 24px;
+    }
+
+    .container::before {
+        margin: -21px -14px 19px;
+    }
+
+    .brand-logo {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before {
+        transition: none !important;
+    }
 }

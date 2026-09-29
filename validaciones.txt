@@ -1,0 +1,24 @@
+*prompt para validaciones:
+Quiero validar inputs en JavaScript
+Reglas:
+-Mostrar mensaje debajo de cada input (no usar alert)
+-El mensaje debe ser en color rojo y en cursiva
+-Validaciones:
+-Los campos solo deben permitir tipos de datos numericos, es decir, ya sea enteros o de tipo float
+-El monto maximo de credito que puede solicitar el cliente debe ser de solo $80000 y el monto minimo debe ser de $2000
+-No puede estar vacio, todos los campos son obligatorios
+-En tasa de interés, solo se permite ingresar maximo 2 caracteres y minimo 1 caracter, deben ser mayor de 0
+-Si el credito es rechazado, no debe calcular interes a pagar, total del prestamo ni la cuota mensual, y mucho menos mostrar en pantalla
+-Condiciones Tecnicas
+ -Usar los mismos IDs existentes
+ -Las validaciones deben ejecutarse una vez que el cliente de clic en el boton calcular credito 
+ -No modificar IDs existentes
+ -Mostrar errores en un elemento debajo del input
+ -Devuelveme solo las partes que debo agregar o modificar (HTML, CSS, JS), no todo el código. 
+-Debes seguir la estructura desarrollada en los archivos, no debes mezclar las funcionalidades
+-Debe colocarse automaticamente el punto donde es necesario en los inputs
+-Debe aparecer el simbolo de la moneda cotizada "$" al inicio de todos los valores monetarios (en cualquier componente donde se ingresen o muestren)
+
+
+*prompt adicional momentaneo para prueba de botón reiniciar(no lo solicita el reto):
+necesito que me crees el codigo para el boton reiniciar debe dejar limpio y reiniciado todos los valores anteriormente guardados, asi mismo como mostrar 0.00 en pantalla en los campos que sea necesario

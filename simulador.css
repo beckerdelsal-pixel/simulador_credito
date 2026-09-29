@@ -354,3 +354,81 @@ button:focus-visible {
         transition: none !important;
     }
 }
+
+/* ==========================================
+   SÍMBOLO DE MONEDA EN CAMPOS MONETARIOS
+   ========================================== */
+
+.input-moneda {
+    position: relative;
+    width: 100%;
+}
+
+.input-moneda .simbolo-moneda {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    width: auto;
+    color: #171717;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.input-moneda input {
+    padding-left: 29px;
+}
+
+
+/* ==========================================
+   MENSAJES DE VALIDACIÓN
+   ========================================== */
+
+.mensaje-error {
+    min-height: 18px;
+    margin-top: 4px;
+    color: #d00000;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+
+/* Campo con error */
+
+.input-invalido {
+    border-color: #d00000 !important;
+    box-shadow: 0 0 0 3px rgba(208, 0, 0, 0.10) !important;
+}
+
+
+/* Campo válido */
+
+.input-valido {
+    border-color: #16823b;
+}
+
+/* ==========================================
+   SÍMBOLO DE PORCENTAJE
+   ========================================== */
+
+.input-porcentaje {
+    position: relative;
+    width: 100%;
+}
+
+.input-porcentaje input {
+    padding-right: 35px;
+}
+
+.input-porcentaje .simbolo-porcentaje {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    color: #171717;
+    font-weight: 700;
+    pointer-events: none;
+}

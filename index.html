@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="utilitarios.js"></script>
     <script src="simulador.js"></script>
 </head>
+
 <body>
 
     <div class="container">
@@ -20,23 +22,49 @@
 
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <div class="input-moneda">
+            <span class="simbolo-moneda">$</span>
+            <input type="text" id="txtIngresos">
+        </div>
+        <div id="error-txtIngresos" class="mensaje-error"></div>
+
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <div class="input-moneda">
+            <span class="simbolo-moneda">$</span>
+            <input type="text" id="txtEgresos">
+        </div>
+        <div id="error-txtEgresos" class="mensaje-error"></div>
+
 
         <p>Disponible: <span id="spnDisponible"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
 
         <h2>Solicitud de crédito</h2>
+        <!-- Monto -->
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <div class="input-moneda">
+            <span class="simbolo-moneda">$</span>
+            <input type="text" id="txtMonto">
+        </div>
+        <div id="error-txtMonto" class="mensaje-error"></div>
 
+
+        <!-- Plazo -->
         <label for="txtPlazo">Plazo en años:</label>
         <input type="text" id="txtPlazo">
+        <div id="error-txtPlazo" class="mensaje-error"></div>
 
+
+        <!-- Tasa -->
         <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+
+        <div class="input-porcentaje">
+            <input type="text" id="txtTasaInteres">
+            <span class="simbolo-porcentaje">%</span>
+        </div>
+
+        <div id="error-txtTasaInteres" class="mensaje-error"></div>
 
         <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
         <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
@@ -45,9 +73,10 @@
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+            <button id="btnReiniciar" onclick="reiniciar();">Reiniciar</button>
         </div>
     </div>
 
 </body>
+
 </html>
